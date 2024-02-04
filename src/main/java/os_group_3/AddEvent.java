@@ -52,6 +52,7 @@ public class AddEvent extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        dateOfEvent = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OS_Group3");
@@ -115,11 +116,6 @@ submit.addActionListener(new java.awt.event.ActionListener() {
 
     back.setBackground(new java.awt.Color(103, 146, 137));
     back.setText("back");
-    back.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            backActionPerformed(evt);
-        }
-    });
     jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 527, -1, 30));
 
     jPanel2.setBackground(new java.awt.Color(255, 250, 202));
@@ -131,6 +127,17 @@ submit.addActionListener(new java.awt.event.ActionListener() {
     jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
 
     jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 240, 50));
+
+    dateOfEvent.setBackground(new java.awt.Color(255, 250, 202));
+    dateOfEvent.setForeground(new java.awt.Color(0, 0, 0));
+    dateOfEvent.addInputMethodListener(new java.awt.event.InputMethodListener() {
+        public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+        }
+        public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+            dateOfEventdateInput(evt);
+        }
+    });
+    jPanel1.add(dateOfEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 170, 200, 40));
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -186,18 +193,14 @@ submit.addActionListener(new java.awt.event.ActionListener() {
      
     }//GEN-LAST:event_formWindowOpened
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-       show(false);
-       EventList form = new EventList();
-       form.show();
-    }//GEN-LAST:event_backActionPerformed
-
     private void dateOfEventdateInput(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_dateOfEventdateInput
 
     }//GEN-LAST:event_dateOfEventdateInput
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit1ActionPerformed
-        // TODO add your handling code here:
+        show(false);
+       EventList form = new EventList();
+       form.show();
     }//GEN-LAST:event_submit1ActionPerformed
 
     /**
@@ -252,6 +255,7 @@ submit.addActionListener(new java.awt.event.ActionListener() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
+    private com.toedter.calendar.JDateChooser dateOfEvent;
     private javax.swing.JTextArea description;
     private javax.swing.JTextField event_duration;
     private javax.swing.JTextField event_name;
