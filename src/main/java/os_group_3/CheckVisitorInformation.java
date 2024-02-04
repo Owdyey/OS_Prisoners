@@ -40,17 +40,17 @@ public class CheckVisitorInformation extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        submit = new CustomComponents.button.Button();
-        roundedPanel1 = new CustomComponents.RoundedPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        back = new CustomComponents.button.Button();
         firstname = new javax.swing.JTextField();
         middlename = new javax.swing.JTextField();
         lastname = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        submit = new javax.swing.JButton();
         logo = new javax.swing.JLabel();
+        back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OS_Group3");
@@ -68,32 +68,6 @@ public class CheckVisitorInformation extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 53, 84));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        submit.setBackground(new java.awt.Color(103, 146, 137));
-        submit.setForeground(new java.awt.Color(255, 250, 202));
-        submit.setText("Next");
-        submit.setFocusable(false);
-        submit.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        submit.setRound(20);
-        submit.setShadowColor(new java.awt.Color(102, 102, 102));
-        submit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitActionPerformed(evt);
-            }
-        });
-        jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 100, 40));
-
-        roundedPanel1.setBackground(new java.awt.Color(255, 250, 202));
-        roundedPanel1.setRoundBottomRight(20);
-        roundedPanel1.setRoundTopRight(20);
-        roundedPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Visitor Information");
-        roundedPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 210, -1));
-
-        jPanel1.add(roundedPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 230, 50));
-
         jLabel3.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 250, 202));
         jLabel3.setText("First Name");
@@ -108,20 +82,6 @@ public class CheckVisitorInformation extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 250, 202));
         jLabel5.setText("Last Name");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, 90, -1));
-
-        back.setBackground(new java.awt.Color(103, 146, 137));
-        back.setForeground(new java.awt.Color(255, 250, 202));
-        back.setText("Back");
-        back.setFocusable(false);
-        back.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        back.setRound(20);
-        back.setShadowColor(new java.awt.Color(102, 102, 102));
-        back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
-            }
-        });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 100, 40));
 
         firstname.setBackground(new java.awt.Color(255, 250, 202));
         firstname.setForeground(new java.awt.Color(0, 0, 0));
@@ -150,16 +110,62 @@ public class CheckVisitorInformation extends javax.swing.JFrame {
         });
         jPanel1.add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 240, 50));
 
+        jPanel2.setBackground(new java.awt.Color(255, 250, 202));
+        jPanel2.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Visitor Information");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(42, 42, 42))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 290, 70));
+
+        submit.setBackground(new java.awt.Color(103, 146, 137));
+        submit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        submit.setText("submit");
+        submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, -1, 40));
+
         logo.setBackground(new java.awt.Color(255, 250, 202));
         logo.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
             + ".png")));
 jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 430, 400));
 
-javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-getContentPane().setLayout(layout);
-layout.setHorizontalGroup(
-    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+back.setBackground(new java.awt.Color(103, 146, 137));
+back.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+back.setText("back");
+back.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        backActionPerformed(evt);
+    }
+    });
+    jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 527, -1, 40));
+
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+    getContentPane().setLayout(layout);
+    layout.setHorizontalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,17 +336,17 @@ layout.setHorizontalGroup(
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private CustomComponents.button.Button back;
+    private javax.swing.JButton back;
     private javax.swing.JTextField firstname;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField lastname;
     private javax.swing.JLabel logo;
     private javax.swing.JTextField middlename;
-    private CustomComponents.RoundedPanel roundedPanel1;
-    private CustomComponents.button.Button submit;
+    private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }

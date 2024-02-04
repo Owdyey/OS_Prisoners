@@ -33,11 +33,11 @@ public class EventList extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        loginButton = new CustomComponents.button.Button();
-        loginButton3 = new CustomComponents.button.Button();
-        roundedPanel1 = new CustomComponents.RoundedPanel();
-        jLabel1 = new javax.swing.JLabel();
+        loginButton3 = new javax.swing.JButton();
         logo = new javax.swing.JLabel();
+        loginButton = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OS_Group3");
@@ -55,54 +55,61 @@ public class EventList extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 53, 84));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        loginButton.setBackground(new java.awt.Color(103, 146, 137));
-        loginButton.setForeground(new java.awt.Color(255, 250, 202));
-        loginButton.setText("Back");
-        loginButton.setFocusable(false);
-        loginButton.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        loginButton.setRound(20);
-        loginButton.setShadowColor(new java.awt.Color(102, 102, 102));
-        loginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 100, 40));
-
         loginButton3.setBackground(new java.awt.Color(103, 146, 137));
-        loginButton3.setForeground(new java.awt.Color(255, 250, 202));
-        loginButton3.setText("Events List");
-        loginButton3.setFocusable(false);
-        loginButton3.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        loginButton3.setShadowColor(new java.awt.Color(102, 102, 102));
+        loginButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        loginButton3.setText("List of Events");
         loginButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(loginButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 270, 90));
-
-        roundedPanel1.setBackground(new java.awt.Color(255, 250, 202));
-        roundedPanel1.setRoundBottomRight(20);
-        roundedPanel1.setRoundTopRight(20);
-        roundedPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Event List");
-        roundedPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, -1));
-
-        jPanel1.add(roundedPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 210, 50));
+        jPanel1.add(loginButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 250, 80));
 
         logo.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
             + ".png")));
 jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 430, 400));
 
-javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-getContentPane().setLayout(layout);
-layout.setHorizontalGroup(
-    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+loginButton.setBackground(new java.awt.Color(103, 146, 137));
+loginButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+loginButton.setText("back");
+loginButton.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        loginButtonActionPerformed(evt);
+    }
+    });
+    jPanel1.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, -1, -1));
+
+    jPanel2.setBackground(new java.awt.Color(255, 250, 202));
+    jPanel2.setForeground(new java.awt.Color(0, 0, 0));
+
+    jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+    jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel1.setText("Event List");
+
+    javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+    jPanel2.setLayout(jPanel2Layout);
+    jPanel2Layout.setHorizontalGroup(
+        jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addContainerGap(81, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(55, 55, 55))
+    );
+    jPanel2Layout.setVerticalGroup(
+        jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGap(17, 17, 17)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(26, Short.MAX_VALUE))
+    );
+
+    jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 290, 70));
+
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+    getContentPane().setLayout(layout);
+    layout.setHorizontalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,9 +185,9 @@ layout.setHorizontalGroup(
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private CustomComponents.button.Button loginButton;
-    private CustomComponents.button.Button loginButton3;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton loginButton;
+    private javax.swing.JButton loginButton3;
     private javax.swing.JLabel logo;
-    private CustomComponents.RoundedPanel roundedPanel1;
     // End of variables declaration//GEN-END:variables
 }
