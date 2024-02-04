@@ -40,19 +40,18 @@ public class AddEvent extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        submit = new CustomComponents.button.Button();
-        roundedPanel1 = new CustomComponents.RoundedPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        back = new CustomComponents.button.Button();
-        dateOfEvent = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         description = new javax.swing.JTextArea();
         event_name = new javax.swing.JTextField();
         event_duration = new javax.swing.JTextField();
         logo = new javax.swing.JLabel();
+        submit = new javax.swing.JButton();
+        back = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OS_Group3");
@@ -70,32 +69,6 @@ public class AddEvent extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 53, 84));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        submit.setBackground(new java.awt.Color(103, 146, 137));
-        submit.setForeground(new java.awt.Color(255, 250, 202));
-        submit.setText("Submit");
-        submit.setFocusable(false);
-        submit.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        submit.setRound(20);
-        submit.setShadowColor(new java.awt.Color(102, 102, 102));
-        submit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitActionPerformed(evt);
-            }
-        });
-        jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 520, 100, 40));
-
-        roundedPanel1.setBackground(new java.awt.Color(255, 250, 202));
-        roundedPanel1.setRoundBottomRight(20);
-        roundedPanel1.setRoundTopRight(20);
-        roundedPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Event Information");
-        roundedPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 210, -1));
-
-        jPanel1.add(roundedPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 230, 50));
-
         jLabel3.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 250, 202));
         jLabel3.setText("Event Name");
@@ -110,31 +83,6 @@ public class AddEvent extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 250, 202));
         jLabel6.setText("Event Duration");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 100, -1));
-
-        back.setBackground(new java.awt.Color(103, 146, 137));
-        back.setForeground(new java.awt.Color(255, 250, 202));
-        back.setText("Back");
-        back.setFocusable(false);
-        back.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        back.setRound(20);
-        back.setShadowColor(new java.awt.Color(102, 102, 102));
-        back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
-            }
-        });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 100, 40));
-
-        dateOfEvent.setBackground(new java.awt.Color(255, 250, 202));
-        dateOfEvent.setForeground(new java.awt.Color(0, 0, 0));
-        dateOfEvent.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-                dateOfEventdateInput(evt);
-            }
-        });
-        jPanel1.add(dateOfEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, 210, 40));
 
         description.setBackground(new java.awt.Color(255, 250, 202));
         description.setColumns(20);
@@ -156,11 +104,39 @@ public class AddEvent extends javax.swing.JFrame {
             + ".png")));
 jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 430, 400));
 
-javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-getContentPane().setLayout(layout);
-layout.setHorizontalGroup(
-    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+submit.setBackground(new java.awt.Color(103, 146, 137));
+submit.setText("submit");
+submit.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        submitActionPerformed(evt);
+    }
+    });
+    jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 527, -1, 30));
+
+    back.setBackground(new java.awt.Color(103, 146, 137));
+    back.setText("back");
+    back.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            backActionPerformed(evt);
+        }
+    });
+    jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 527, -1, 30));
+
+    jPanel2.setBackground(new java.awt.Color(255, 250, 202));
+    jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jLabel1.setFont(new java.awt.Font("Nirmala UI", 0, 24)); // NOI18N
+    jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel1.setText("Add Event");
+    jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
+
+    jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 240, 50));
+
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+    getContentPane().setLayout(layout);
+    layout.setHorizontalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,6 +196,10 @@ layout.setHorizontalGroup(
 
     }//GEN-LAST:event_dateOfEventdateInput
 
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_submit1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -271,8 +251,7 @@ layout.setHorizontalGroup(
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private CustomComponents.button.Button back;
-    private com.toedter.calendar.JDateChooser dateOfEvent;
+    private javax.swing.JButton back;
     private javax.swing.JTextArea description;
     private javax.swing.JTextField event_duration;
     private javax.swing.JTextField event_name;
@@ -281,9 +260,9 @@ layout.setHorizontalGroup(
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel logo;
-    private CustomComponents.RoundedPanel roundedPanel1;
-    private CustomComponents.button.Button submit;
+    private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }
