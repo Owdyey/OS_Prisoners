@@ -48,8 +48,8 @@ public class AddEvent extends javax.swing.JFrame {
         event_name = new javax.swing.JTextField();
         event_duration = new javax.swing.JTextField();
         logo = new javax.swing.JLabel();
-        submit = new javax.swing.JButton();
-        back = new javax.swing.JButton();
+        submitt = new javax.swing.JButton();
+        backk = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         dateOfEvent = new com.toedter.calendar.JDateChooser();
@@ -105,18 +105,23 @@ public class AddEvent extends javax.swing.JFrame {
             + ".png")));
 jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 430, 400));
 
-submit.setBackground(new java.awt.Color(103, 146, 137));
-submit.setText("submit");
-submit.addActionListener(new java.awt.event.ActionListener() {
+submitt.setBackground(new java.awt.Color(103, 146, 137));
+submitt.setText("submit");
+submitt.addActionListener(new java.awt.event.ActionListener() {
     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        submitActionPerformed(evt);
+        submittActionPerformed(evt);
     }
     });
-    jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 527, -1, 30));
+    jPanel1.add(submitt, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 527, -1, 30));
 
-    back.setBackground(new java.awt.Color(103, 146, 137));
-    back.setText("back");
-    jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 527, -1, 30));
+    backk.setBackground(new java.awt.Color(103, 146, 137));
+    backk.setText("back");
+    backk.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            backkActionPerformed(evt);
+        }
+    });
+    jPanel1.add(backk, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 527, -1, 30));
 
     jPanel2.setBackground(new java.awt.Color(255, 250, 202));
     jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -154,8 +159,8 @@ submit.addActionListener(new java.awt.event.ActionListener() {
     setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        try {
+    private void submittActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submittActionPerformed
+    try {
             String DocumentName = event_name.getText();
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String eventDate = dateFormat.format(dateOfEvent.getDate());
@@ -182,7 +187,7 @@ submit.addActionListener(new java.awt.event.ActionListener() {
                     "Error",
                     JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_submitActionPerformed
+    }//GEN-LAST:event_submittActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
@@ -198,10 +203,14 @@ submit.addActionListener(new java.awt.event.ActionListener() {
     }//GEN-LAST:event_dateOfEventdateInput
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit1ActionPerformed
-        show(false);
+      
+    }//GEN-LAST:event_submit1ActionPerformed
+
+    private void backkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backkActionPerformed
+          show(false);
        EventList form = new EventList();
        form.show();
-    }//GEN-LAST:event_submit1ActionPerformed
+    }//GEN-LAST:event_backkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,7 +263,7 @@ submit.addActionListener(new java.awt.event.ActionListener() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton back;
+    private javax.swing.JButton backk;
     private com.toedter.calendar.JDateChooser dateOfEvent;
     private javax.swing.JTextArea description;
     private javax.swing.JTextField event_duration;
@@ -267,6 +276,6 @@ submit.addActionListener(new java.awt.event.ActionListener() {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel logo;
-    private javax.swing.JButton submit;
+    private javax.swing.JButton submitt;
     // End of variables declaration//GEN-END:variables
 }

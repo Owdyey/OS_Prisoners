@@ -170,7 +170,7 @@ jButton3.addActionListener(new java.awt.event.ActionListener() {
         jButton3ActionPerformed(evt);
     }
     });
-    jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 510, 90, 40));
+    jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 510, 90, 30));
 
     jButton4.setBackground(new java.awt.Color(103, 146, 137));
     jButton4.setText("back");
@@ -179,7 +179,7 @@ jButton3.addActionListener(new java.awt.event.ActionListener() {
             jButton4ActionPerformed(evt);
         }
     });
-    jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 90, 40));
+    jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 90, 30));
 
     jPanel2.setBackground(new java.awt.Color(255, 250, 202));
     jPanel2.setForeground(new java.awt.Color(0, 0, 0));
