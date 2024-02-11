@@ -309,10 +309,10 @@ firstname.addActionListener(new java.awt.event.ActionListener() {
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          try{
-            String documentName = contactno.getText()+" "+address.getText()+" "+lastname.getText();
+            String documentName = firstname.getText()+" "+middlename.getText()+" "+lastname.getText();
             Map<String, Object> data = new HashMap();
-            data.put("first_name",contactno.getText());
-            data.put("middle_name",address.getText());
+            data.put("first_name",firstname.getText());
+            data.put("middle_name",middlename.getText());
             data.put("last_name",lastname.getText());
             data.put("address",address.getText());
             data.put("age",age.getText());
@@ -327,8 +327,8 @@ firstname.addActionListener(new java.awt.event.ActionListener() {
             DocumentReference docRef = db_connect.db.collection("visitor").document(documentName);
             docRef.update(data);
 
-            contactno.setText("");
-            address.setText("");
+            firstname.setText("");
+            middlename.setText("");
             address.setText("");
             lastname.setText("");
             age.setText("");

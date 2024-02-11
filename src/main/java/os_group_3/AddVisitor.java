@@ -340,21 +340,6 @@ jPanel2Layout.setHorizontalGroup(
         String timeOut = newTime.format(timeformatter);
 
         try {
-            // Create a JFileChooser for image upload
-            JFileChooser fileChooser = new JFileChooser();
-            FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "jpeg", "png", "gif");
-            fileChooser.setFileFilter(filter);
-
-            int result = fileChooser.showOpenDialog(this);
-
-            if (result == JFileChooser.APPROVE_OPTION) {
-                File selectedFile = fileChooser.getSelectedFile();
-
-                // Validate that it's an image file
-                if (isValidImageFile(selectedFile)) {
-                    // Perform image upload logic
-                    String base64Image = convertImageToBase64(selectedFile);
-
                     // Continue with the rest of the data upload
                     String documentName = firstname.getText() + " " + middlename.getText() + " " + lastname.getText();
                     Map<String, Object> data = new HashMap<>();
@@ -371,7 +356,7 @@ jPanel2Layout.setHorizontalGroup(
                     data.put("date_of_visit", formattedDate);
                     data.put("time_of_visit", formattedTime);
                     data.put("time_out", timeOut);
-                    data.put("image", base64Image);
+                 
 
                     DocumentReference docRef = db_connect.db.collection("visitor").document(documentName);
                     docRef.set(data);
@@ -390,10 +375,7 @@ jPanel2Layout.setHorizontalGroup(
                     JOptionPane.showMessageDialog(frame, "Information added successfully!",
                             "Success",
                             JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(this, "Invalid image file. Please select a valid image file.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
+                
         } catch (Exception e) {
             JOptionPane.showMessageDialog(frame, "Error occurred when adding information",
                     "Error",
