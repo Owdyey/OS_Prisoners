@@ -159,8 +159,7 @@ public class AddPrisoner extends javax.swing.JFrame {
         jPanel1.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 240, 40));
 
         logo.setBackground(new java.awt.Color(255, 250, 202));
-        logo.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
-            + ".png")));
+        logo.setIcon((new javax.swing.ImageIcon("images\\bjmpLogo.png")));
 jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 430, 400));
 
 jButton3.setBackground(new java.awt.Color(103, 146, 137));

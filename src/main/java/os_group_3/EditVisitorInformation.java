@@ -253,8 +253,7 @@ public class EditVisitorInformation extends javax.swing.JFrame {
         jPanel1.add(violation, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 240, 50));
 
         logo1.setBackground(new java.awt.Color(255, 250, 202));
-        logo1.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
-            + ".png")));
+        logo.setIcon((new javax.swing.ImageIcon("images\\bjmpLogo.png")));
 jPanel1.add(logo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 430, 400));
 
 jLabel10.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N

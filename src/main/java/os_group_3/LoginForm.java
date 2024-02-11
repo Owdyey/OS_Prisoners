@@ -90,8 +90,7 @@ public class LoginForm extends javax.swing.JFrame {
         password.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 230, 50));
 
-        logo.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
-            + ".png")));
+        logo.setIcon((new javax.swing.ImageIcon("images\\bjmpLogo.png")));
 jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 430, 400));
 
 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

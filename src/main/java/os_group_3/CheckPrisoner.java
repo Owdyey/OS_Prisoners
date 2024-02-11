@@ -147,8 +147,7 @@ public class CheckPrisoner extends javax.swing.JFrame {
         jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 387, 90, 40));
 
         logo.setBackground(new java.awt.Color(255, 250, 202));
-        logo.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
-            + ".png")));
+        logo.setIcon((new javax.swing.ImageIcon("images\\bjmpLogo.png")));
 jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 430, 400));
 
 back.setBackground(new java.awt.Color(103, 146, 137));

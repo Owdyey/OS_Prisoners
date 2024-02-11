@@ -147,8 +147,7 @@ public class CheckVisitor extends javax.swing.JFrame {
         jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, -1, 40));
 
         logo.setBackground(new java.awt.Color(255, 250, 202));
-        logo.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
-            + ".png")));
+        logo.setIcon((new javax.swing.ImageIcon("images\\bjmpLogo.png")));
 jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 430, 400));
 
 back.setBackground(new java.awt.Color(103, 146, 137));
@@ -223,7 +222,7 @@ back.addActionListener(new java.awt.event.ActionListener() {
                variables.image = data.get("image").toString();
                 
                 }else{
-                     JOptionPane.showMessageDialog(frame, "The visitor is currently not eligible for any visits.\n" + "Rules Violated by the Visitor:\n"+"•"+data.get("violation").toString(),
+                     JOptionPane.showMessageDialog(frame, "The visitor is currently not eligible for any visits.\n" + "Rules Violated by the Visitor:\n"+"•\t"+data.get("violation").toString(),
                         "Success",
                         JOptionPane.INFORMATION_MESSAGE);
                 }

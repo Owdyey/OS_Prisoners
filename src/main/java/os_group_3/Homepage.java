@@ -125,8 +125,7 @@ public class Homepage extends javax.swing.JFrame {
         });
         jPanel1.add(loginButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 220, 60));
 
-        logo.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
-            + ".png")));
+        logo.setIcon((new javax.swing.ImageIcon("images\\bjmpLogo.png")));
 jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 430, 400));
 
 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
