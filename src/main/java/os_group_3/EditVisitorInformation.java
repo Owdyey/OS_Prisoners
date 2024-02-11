@@ -231,7 +231,7 @@ firstname1.addActionListener(new java.awt.event.ActionListener() {
             backActionPerformed(evt);
         }
     });
-    jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 497, -1, 40));
+    jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, 40));
 
     submit.setBackground(new java.awt.Color(103, 146, 137));
     submit.setText("submit");
@@ -240,7 +240,7 @@ firstname1.addActionListener(new java.awt.event.ActionListener() {
             submitActionPerformed(evt);
         }
     });
-    jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 490, -1, 40));
+    jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 480, -1, 40));
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);

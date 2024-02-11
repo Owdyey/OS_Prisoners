@@ -107,7 +107,7 @@ jButton1.addActionListener(new java.awt.event.ActionListener() {
         jButton1ActionPerformed(evt);
     }
     });
-    jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 90, 40));
+    jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 90, 40));
 
     jPanel2.setBackground(new java.awt.Color(255, 250, 202));
 

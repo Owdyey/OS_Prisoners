@@ -112,7 +112,7 @@ submitt.addActionListener(new java.awt.event.ActionListener() {
         submittActionPerformed(evt);
     }
     });
-    jPanel1.add(submitt, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 527, -1, 30));
+    jPanel1.add(submitt, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 500, -1, 40));
 
     backk.setBackground(new java.awt.Color(103, 146, 137));
     backk.setText("back");
@@ -121,7 +121,7 @@ submitt.addActionListener(new java.awt.event.ActionListener() {
             backkActionPerformed(evt);
         }
     });
-    jPanel1.add(backk, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 527, -1, 30));
+    jPanel1.add(backk, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, 40));
 
     jPanel2.setBackground(new java.awt.Color(255, 250, 202));
     jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
