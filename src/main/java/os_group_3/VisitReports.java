@@ -54,14 +54,14 @@ public class VisitReports extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        backButton = new CustomComponents.button.Button();
         jScrollPane1 = new javax.swing.JScrollPane();
         dataTable = new javax.swing.JTable();
-        roundedPanel1 = new CustomComponents.RoundedPanel();
-        jLabel1 = new javax.swing.JLabel();
-        Enter = new CustomComponents.button.Button();
         date = new com.toedter.calendar.JDateChooser();
-        exportData = new CustomComponents.button.Button();
+        jButton1 = new javax.swing.JButton();
+        export = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OS_Group3");
@@ -80,20 +80,6 @@ public class VisitReports extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 53, 84));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        backButton.setBackground(new java.awt.Color(103, 146, 137));
-        backButton.setForeground(new java.awt.Color(255, 250, 202));
-        backButton.setText("Back");
-        backButton.setFocusable(false);
-        backButton.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        backButton.setRound(20);
-        backButton.setShadowColor(new java.awt.Color(102, 102, 102));
-        backButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 100, 40));
-
         dataTable.setBackground(new java.awt.Color(255, 250, 202));
         dataTable.setForeground(new java.awt.Color(0, 0, 0));
         dataTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -111,31 +97,6 @@ public class VisitReports extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 740, 330));
 
-        roundedPanel1.setBackground(new java.awt.Color(255, 250, 202));
-        roundedPanel1.setRoundBottomRight(20);
-        roundedPanel1.setRoundTopRight(20);
-        roundedPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Visitor List");
-        roundedPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 180, -1));
-
-        jPanel1.add(roundedPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 230, 50));
-
-        Enter.setBackground(new java.awt.Color(103, 146, 137));
-        Enter.setForeground(new java.awt.Color(255, 250, 202));
-        Enter.setText("Enter");
-        Enter.setFocusable(false);
-        Enter.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        Enter.setShadowColor(new java.awt.Color(102, 102, 102));
-        Enter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EnterActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 120, 80, 50));
-
         date.setBackground(new java.awt.Color(103, 146, 137));
         date.setForeground(new java.awt.Color(0, 0, 0));
         date.addInputMethodListener(new java.awt.event.InputMethodListener() {
@@ -147,21 +108,60 @@ public class VisitReports extends javax.swing.JFrame {
         });
         jPanel1.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 160, 40));
 
-        exportData.setBackground(new java.awt.Color(103, 146, 137));
-        exportData.setForeground(new java.awt.Color(255, 250, 202));
-        exportData.setText("Export Data");
-        exportData.setFocusable(false);
-        exportData.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        exportData.setRound(20);
-        exportData.setShadowColor(new java.awt.Color(102, 102, 102));
-        exportData.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(103, 146, 137));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exportDataActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(exportData, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 510, 120, 50));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 90, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, -1));
+        export.setBackground(new java.awt.Color(103, 146, 137));
+        export.setText("Export Data");
+        export.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exportActionPerformed(evt);
+            }
+        });
+        jPanel1.add(export, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 510, 110, 40));
+
+        jButton2.setBackground(new java.awt.Color(103, 146, 137));
+        jButton2.setText("Enter");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 120, -1, 40));
+
+        jPanel2.setBackground(new java.awt.Color(255, 250, 202));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Visit Reports");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel1)
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 240, 70));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 570));
 
         pack();
         setLocationRelativeTo(null);
@@ -170,12 +170,6 @@ public class VisitReports extends javax.swing.JFrame {
     
     
     
-    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        show(false);
-        VisitingSchedule form = new VisitingSchedule();
-        form.show();
-    }//GEN-LAST:event_backButtonActionPerformed
-
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
 
     }//GEN-LAST:event_formWindowClosing
@@ -203,68 +197,18 @@ public class VisitReports extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
     
     
-    private void EnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterActionPerformed
-        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
-        Date dateSelected = date.getDate();
-        
-        String formattedDate = dateFormatter.format(dateSelected);
-        
-        
-        
-        CollectionReference collectionRef = db_connect.db.collection("visitor");
-        
-        try{
-            Query query = collectionRef.whereEqualTo("date_of_visit", formattedDate);
-            
-            // Execute the query
-            ApiFuture<QuerySnapshot> querySnapshot = query.get();
-
-            // Clear the existing rows in the table model
-            DefaultTableModel tableModel = (DefaultTableModel) dataTable.getModel();
-            tableModel.setRowCount(0);
-
-            // Iterate over the documents in the result set
-            for (QueryDocumentSnapshot document : querySnapshot.get().getDocuments()) {
-                // Extract data from the document
-              
-
-                // Create the row data with the updated time
-               Object[] rowData = {
-                    document.getString("first_name") + " " + document.getString("last_name"),
-                    document.getString("pdl_firstname") + " " + document.getString("pdl_lastname"),
-                    document.getString("relationship"),
-                    document.getString("date_of_visit"),
-                    document.getString("time_of_visit"),
-                    };
-
-                // Add the row to the table model
-                tableModel.addRow(rowData);
-            }
-            
-            if(tableModel.getRowCount() == 0){
-                JOptionPane.showMessageDialog(null,
-                    "No visit record on the selected date",
-                    "Visit Record Empty!",
-                    JOptionPane.WARNING_MESSAGE);
-            }
-                
-        }catch(Exception e){
-             e.printStackTrace();
-            JOptionPane.showMessageDialog(null,
-                    "There's a problem in the database.",
-                    "Database Error",
-                    JOptionPane.WARNING_MESSAGE);
-        }
-        
-        
-    }//GEN-LAST:event_EnterActionPerformed
-
     private void datedateInput(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_datedateInput
 
     }//GEN-LAST:event_datedateInput
     Component frame;
-    private void exportDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportDataActionPerformed
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       show(false);
+        VisitingSchedule form = new VisitingSchedule();
+        form.show();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void exportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportActionPerformed
+      SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date dateSelected = date.getDate();
         String date = dateFormat.format(dateSelected);
         
@@ -380,7 +324,61 @@ public class VisitReports extends javax.swing.JFrame {
                     "Database Error",
                     JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_exportDataActionPerformed
+    }//GEN-LAST:event_exportActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date dateSelected = date.getDate();
+        
+        String formattedDate = dateFormatter.format(dateSelected);
+        
+        
+        
+        CollectionReference collectionRef = db_connect.db.collection("visitor");
+        
+        try{
+            Query query = collectionRef.whereEqualTo("date_of_visit", formattedDate);
+            
+            // Execute the query
+            ApiFuture<QuerySnapshot> querySnapshot = query.get();
+
+            // Clear the existing rows in the table model
+            DefaultTableModel tableModel = (DefaultTableModel) dataTable.getModel();
+            tableModel.setRowCount(0);
+
+            // Iterate over the documents in the result set
+            for (QueryDocumentSnapshot document : querySnapshot.get().getDocuments()) {
+                // Extract data from the document
+              
+
+                // Create the row data with the updated time
+               Object[] rowData = {
+                    document.getString("first_name") + " " + document.getString("last_name"),
+                    document.getString("pdl_firstname") + " " + document.getString("pdl_lastname"),
+                    document.getString("relationship"),
+                    document.getString("date_of_visit"),
+                    document.getString("time_of_visit"),
+                    };
+
+                // Add the row to the table model
+                tableModel.addRow(rowData);
+            }
+            
+            if(tableModel.getRowCount() == 0){
+                JOptionPane.showMessageDialog(null,
+                    "No visit record on the selected date",
+                    "Visit Record Empty!",
+                    JOptionPane.WARNING_MESSAGE);
+            }
+                
+        }catch(Exception e){
+             e.printStackTrace();
+            JOptionPane.showMessageDialog(null,
+                    "There's a problem in the database.",
+                    "Database Error",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 private void showData() {
         // Get the Firestore instance
 
@@ -476,14 +474,14 @@ private void showData() {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private CustomComponents.button.Button Enter;
-    private CustomComponents.button.Button backButton;
     private javax.swing.JTable dataTable;
     private com.toedter.calendar.JDateChooser date;
-    private CustomComponents.button.Button exportData;
+    private javax.swing.JButton export;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private CustomComponents.RoundedPanel roundedPanel1;
     // End of variables declaration//GEN-END:variables
 }

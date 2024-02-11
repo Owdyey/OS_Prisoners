@@ -35,11 +35,11 @@ public class LoginForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        loginButton = new CustomComponents.button.Button();
-        username = new textfield.TextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        password = new passwordfield.PasswordField();
+        password = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,25 +57,6 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 53, 84));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        loginButton.setBackground(new java.awt.Color(103, 146, 137));
-        loginButton.setForeground(new java.awt.Color(255, 250, 202));
-        loginButton.setText("Login");
-        loginButton.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        loginButton.setRound(20);
-        loginButton.setShadowColor(new java.awt.Color(102, 102, 102));
-        loginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 100, 40));
-
-        username.setBackground(new java.awt.Color(255, 250, 202));
-        username.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 12)); // NOI18N
-        username.setRound(20);
-        username.setShadowColor(new java.awt.Color(153, 153, 153));
-        jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 250, 50));
-
         jLabel2.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 250, 202));
         jLabel2.setText("Password");
@@ -87,9 +68,22 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 70, -1));
 
         password.setBackground(new java.awt.Color(255, 250, 202));
-        password.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 12)); // NOI18N
-        password.setRound(20);
-        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 250, 50));
+        password.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 230, 50));
+
+        username.setBackground(new java.awt.Color(255, 250, 202));
+        username.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 230, 50));
+
+        jButton1.setBackground(new java.awt.Color(103, 146, 137));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 90, 40));
 
         logo.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
             + ".png")));
@@ -99,50 +93,16 @@ javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 getContentPane().setLayout(layout);
 layout.setHorizontalGroup(
     layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE)
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
 
     pack();
     setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        try {
-            String collectionName = "admin";
-            
-            String usernameInput = username.getText();
-            String passwordInput = hashPass.encryptPassword(password.getText());
-         
-            var documents = db_connect.db.collection(collectionName)
-                    .whereEqualTo("username", usernameInput)
-                    .whereEqualTo("password", passwordInput)
-                    .get()
-                    .get()
-                    .getDocuments();
-            
-            if(!documents.isEmpty()){
-                JOptionPane.showMessageDialog(frame,"Login Complete!",
-                                         "Welcome!",
-                                         JOptionPane.INFORMATION_MESSAGE);
-                Homepage homepage = new Homepage();
-                show(false);
-                homepage.show();
-            }else{
-                JOptionPane.showMessageDialog(frame,"Email or Password not correct!",
-                                         "Login Error!",
-                                         JOptionPane.INFORMATION_MESSAGE);            
-            }  
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(frame,e,
-                                         "Connection error!",
-                                         JOptionPane.INFORMATION_MESSAGE);
-         }
-    }//GEN-LAST:event_loginButtonActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
@@ -151,6 +111,40 @@ layout.setHorizontalGroup(
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            String collectionName = "admin";
+
+            String usernameInput = password.getText();
+            String passwordInput = hashPass.encryptPassword(password.getText());
+
+            var documents = db_connect.db.collection(collectionName)
+            .whereEqualTo("username", usernameInput)
+            .whereEqualTo("password", passwordInput)
+            .get()
+            .get()
+            .getDocuments();
+
+            if(!documents.isEmpty()){
+                JOptionPane.showMessageDialog(frame,"Login Complete!",
+                    "Welcome!",
+                    JOptionPane.INFORMATION_MESSAGE);
+                Homepage homepage = new Homepage();
+                show(false);
+                homepage.show();
+            }else{
+                JOptionPane.showMessageDialog(frame,"Email or Password not correct!",
+                    "Login Error!",
+                    JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(frame,e,
+                "Connection error!",
+                JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,12 +182,12 @@ layout.setHorizontalGroup(
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private CustomComponents.button.Button loginButton;
     private javax.swing.JLabel logo;
-    private passwordfield.PasswordField password;
-    private textfield.TextField username;
+    private javax.swing.JTextField password;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
