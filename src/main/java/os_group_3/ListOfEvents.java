@@ -48,15 +48,15 @@ public class ListOfEvents extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        backButton = new CustomComponents.button.Button();
         jScrollPane1 = new javax.swing.JScrollPane();
         dataTable = new javax.swing.JTable();
-        roundedPanel1 = new CustomComponents.RoundedPanel();
-        jLabel1 = new javax.swing.JLabel();
-        addVisitor = new CustomComponents.button.Button();
         dateOfEvent = new com.toedter.calendar.JDateChooser();
-        Enter = new CustomComponents.button.Button();
-        addVisitor1 = new CustomComponents.button.Button();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        Enter = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
+        addVisitor = new javax.swing.JButton();
+        addVisitor1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OS_Group3");
@@ -75,20 +75,6 @@ public class ListOfEvents extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 53, 84));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        backButton.setBackground(new java.awt.Color(103, 146, 137));
-        backButton.setForeground(new java.awt.Color(255, 250, 202));
-        backButton.setText("Back");
-        backButton.setFocusable(false);
-        backButton.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        backButton.setRound(20);
-        backButton.setShadowColor(new java.awt.Color(102, 102, 102));
-        backButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 100, 40));
-
         dataTable.setBackground(new java.awt.Color(255, 250, 202));
         dataTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -105,32 +91,6 @@ public class ListOfEvents extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 680, 320));
 
-        roundedPanel1.setBackground(new java.awt.Color(255, 250, 202));
-        roundedPanel1.setRoundBottomRight(20);
-        roundedPanel1.setRoundTopRight(20);
-        roundedPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("List of Events");
-        roundedPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 180, -1));
-
-        jPanel1.add(roundedPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 230, 50));
-
-        addVisitor.setBackground(new java.awt.Color(103, 146, 137));
-        addVisitor.setForeground(new java.awt.Color(255, 250, 202));
-        addVisitor.setText("Delete Event");
-        addVisitor.setFocusable(false);
-        addVisitor.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        addVisitor.setRound(20);
-        addVisitor.setShadowColor(new java.awt.Color(102, 102, 102));
-        addVisitor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addVisitorActionPerformed(evt);
-            }
-        });
-        jPanel1.add(addVisitor, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 510, 120, 50));
-
         dateOfEvent.setBackground(new java.awt.Color(255, 250, 202));
         dateOfEvent.setForeground(new java.awt.Color(0, 0, 0));
         dateOfEvent.addInputMethodListener(new java.awt.event.InputMethodListener() {
@@ -142,34 +102,77 @@ public class ListOfEvents extends javax.swing.JFrame {
         });
         jPanel1.add(dateOfEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 210, 40));
 
+        jPanel2.setBackground(new java.awt.Color(255, 250, 202));
+        jPanel2.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("List of Events");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(74, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 290, 70));
+
         Enter.setBackground(new java.awt.Color(103, 146, 137));
+        Enter.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Enter.setForeground(new java.awt.Color(255, 250, 202));
         Enter.setText("Enter");
-        Enter.setFocusable(false);
-        Enter.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        Enter.setShadowColor(new java.awt.Color(102, 102, 102));
         Enter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EnterActionPerformed(evt);
             }
         });
-        jPanel1.add(Enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 130, 80, 50));
+        jPanel1.add(Enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 130, 90, 40));
+
+        backButton.setBackground(new java.awt.Color(103, 146, 137));
+        backButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        backButton.setForeground(new java.awt.Color(255, 250, 202));
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 517, -1, 40));
+
+        addVisitor.setBackground(new java.awt.Color(103, 146, 137));
+        addVisitor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        addVisitor.setForeground(new java.awt.Color(255, 250, 202));
+        addVisitor.setText("Delete Event");
+        addVisitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addVisitorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(addVisitor, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 510, 120, 40));
 
         addVisitor1.setBackground(new java.awt.Color(103, 146, 137));
+        addVisitor1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         addVisitor1.setForeground(new java.awt.Color(255, 250, 202));
         addVisitor1.setText("Add Event");
-        addVisitor1.setFocusable(false);
-        addVisitor1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        addVisitor1.setRound(20);
-        addVisitor1.setShadowColor(new java.awt.Color(102, 102, 102));
         addVisitor1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addVisitor1ActionPerformed(evt);
             }
         });
-        jPanel1.add(addVisitor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 510, 120, 50));
+        jPanel1.add(addVisitor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 110, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 570));
 
         pack();
         setLocationRelativeTo(null);
@@ -288,35 +291,37 @@ private void deleteSelectedRow() {
     }
 }
     private void addVisitor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addVisitor1ActionPerformed
-        // TODO add your handling code here:
+        AddEvent form = new AddEvent();
+        form.show();
+        show(false);
     }//GEN-LAST:event_addVisitor1ActionPerformed
-private void deleteDataFromFirestore(String eventName, String eventDuration, String eventDate) {
-    try {
-        // Create a reference to the collection
-        CollectionReference collectionRef = db_connect.db.collection("events");
+    private void deleteDataFromFirestore(String eventName, String eventDuration, String eventDate) {
+        try {
+            // Create a reference to the collection
+            CollectionReference collectionRef = db_connect.db.collection("events");
 
-        // Create a query to filter documents based on the selected data
-        Query query = collectionRef.whereEqualTo("event_name", eventName)
-                                    .whereEqualTo("event_duration", eventDuration)
-                                    .whereEqualTo("event_date", eventDate);
+            // Create a query to filter documents based on the selected data
+            Query query = collectionRef.whereEqualTo("event_name", eventName)
+                                        .whereEqualTo("event_duration", eventDuration)
+                                        .whereEqualTo("event_date", eventDate);
 
-        // Execute the query
-        ApiFuture<QuerySnapshot> querySnapshot = query.get();
+            // Execute the query
+            ApiFuture<QuerySnapshot> querySnapshot = query.get();
 
-        // Iterate over the documents in the result set
-        for (QueryDocumentSnapshot document : querySnapshot.get().getDocuments()) {
-            // Delete the document from Firestore
-            document.getReference().delete();
+            // Iterate over the documents in the result set
+            for (QueryDocumentSnapshot document : querySnapshot.get().getDocuments()) {
+                // Delete the document from Firestore
+                document.getReference().delete();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null,
+                    "There's a problem in the database.",
+                    "Database Error",
+                    JOptionPane.WARNING_MESSAGE);
         }
-
-    } catch (Exception e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(null,
-                "There's a problem in the database.",
-                "Database Error",
-                JOptionPane.WARNING_MESSAGE);
     }
-}
     
     private void showData() {    
         Date selectedDate = dateOfEvent.getDate();
@@ -434,15 +439,15 @@ private void deleteDataFromFirestore(String eventName, String eventDuration, Str
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private CustomComponents.button.Button Enter;
-    private CustomComponents.button.Button addVisitor;
-    private CustomComponents.button.Button addVisitor1;
-    private CustomComponents.button.Button backButton;
+    private javax.swing.JButton Enter;
+    private javax.swing.JButton addVisitor;
+    private javax.swing.JButton addVisitor1;
+    private javax.swing.JButton backButton;
     private javax.swing.JTable dataTable;
     private com.toedter.calendar.JDateChooser dateOfEvent;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private CustomComponents.RoundedPanel roundedPanel1;
     // End of variables declaration//GEN-END:variables
 }
