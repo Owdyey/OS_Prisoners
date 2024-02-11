@@ -33,12 +33,12 @@ public class Homepage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        loginButton = new CustomComponents.button.Button();
         loginButton1 = new CustomComponents.button.Button();
         loginButton2 = new CustomComponents.button.Button();
         loginButton3 = new CustomComponents.button.Button();
         logo = new javax.swing.JLabel();
-        roundedPanel1 = new CustomComponents.RoundedPanel();
+        jButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,20 +56,6 @@ public class Homepage extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 53, 84));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        loginButton.setBackground(new java.awt.Color(103, 146, 137));
-        loginButton.setForeground(new java.awt.Color(255, 250, 202));
-        loginButton.setText("Logout");
-        loginButton.setFocusable(false);
-        loginButton.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        loginButton.setRound(20);
-        loginButton.setShadowColor(new java.awt.Color(102, 102, 102));
-        loginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 100, 40));
 
         loginButton1.setBackground(new java.awt.Color(103, 146, 137));
         loginButton1.setForeground(new java.awt.Color(255, 250, 202));
@@ -114,23 +100,45 @@ public class Homepage extends javax.swing.JFrame {
             + ".png")));
 jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 430, 400));
 
-roundedPanel1.setBackground(new java.awt.Color(255, 250, 202));
-roundedPanel1.setRoundBottomRight(20);
-roundedPanel1.setRoundTopRight(20);
-roundedPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+jButton1.setBackground(new java.awt.Color(103, 146, 137));
+jButton1.setText("logout");
+jButton1.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1ActionPerformed(evt);
+    }
+    });
+    jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 90, 40));
 
-jLabel1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-jLabel1.setText("Homepage");
-roundedPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 120, -1));
+    jPanel2.setBackground(new java.awt.Color(255, 250, 202));
 
-jPanel1.add(roundedPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 210, 50));
+    jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+    jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel1.setText("Homepage");
 
-javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-getContentPane().setLayout(layout);
-layout.setHorizontalGroup(
-    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+    javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+    jPanel2.setLayout(jPanel2Layout);
+    jPanel2Layout.setHorizontalGroup(
+        jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGap(34, 34, 34)
+            .addComponent(jLabel1)
+            .addContainerGap(48, Short.MAX_VALUE))
+    );
+    jPanel2Layout.setVerticalGroup(
+        jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGap(24, 24, 24)
+            .addComponent(jLabel1)
+            .addContainerGap(24, Short.MAX_VALUE))
+    );
+
+    jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 200, 80));
+
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+    getContentPane().setLayout(layout);
+    layout.setHorizontalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,35 +148,6 @@ layout.setHorizontalGroup(
     pack();
     setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-            show(false);
-            LoginForm login = new LoginForm();
-            login.show();
-
-//        try {
-//            String collectionName = "admin";
-//            
-//            String usernameInput = username.getText();
-//            String passwordInput = hashPass.encryptPassword(password.getText());
-//         
-//            var documents = db_connect.db.collection(collectionName)
-//                    .whereEqualTo("username", usernameInput)
-//                    .whereEqualTo("password", passwordInput)
-//                    .get()
-//                    .get()
-//                    .getDocuments();
-//            
-//            if(!documents.isEmpty()){
-//                System.out.println("Login successful!");
-//            }else{
-//                System.out.println("Login failed. Invalid username or password.");
-//            }  
-//        }
-//        catch(Exception e){
-//            System.out.print(e);
-//         }
-    }//GEN-LAST:event_loginButtonActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
@@ -195,6 +174,12 @@ layout.setHorizontalGroup(
         EventList form = new EventList();
         form.show();
     }//GEN-LAST:event_loginButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        show(false);
+            LoginForm login = new LoginForm();
+            login.show();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,13 +218,13 @@ layout.setHorizontalGroup(
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private CustomComponents.button.Button loginButton;
+    private javax.swing.JPanel jPanel2;
     private CustomComponents.button.Button loginButton1;
     private CustomComponents.button.Button loginButton2;
     private CustomComponents.button.Button loginButton3;
     private javax.swing.JLabel logo;
-    private CustomComponents.RoundedPanel roundedPanel1;
     // End of variables declaration//GEN-END:variables
 }

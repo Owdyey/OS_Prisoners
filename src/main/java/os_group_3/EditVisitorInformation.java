@@ -38,27 +38,27 @@ public class EditVisitorInformation extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        submit = new CustomComponents.button.Button();
-        roundedPanel1 = new CustomComponents.RoundedPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        address = new textfield.TextField();
         jLabel7 = new javax.swing.JLabel();
-        contactno = new textfield.TextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         status = new javax.swing.JComboBox<>();
-        back = new CustomComponents.button.Button();
         jLabel8 = new javax.swing.JLabel();
         gender = new javax.swing.JComboBox<>();
-        firstname = new javax.swing.JTextField();
-        middlename = new javax.swing.JTextField();
+        contactno = new javax.swing.JTextField();
+        address = new javax.swing.JTextField();
         lastname = new javax.swing.JTextField();
         age = new javax.swing.JTextField();
         logo1 = new javax.swing.JLabel();
+        firstname1 = new javax.swing.JTextField();
+        middlename1 = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        back = new javax.swing.JButton();
+        submit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OS_Group3");
@@ -75,32 +75,6 @@ public class EditVisitorInformation extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 53, 84));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        submit.setBackground(new java.awt.Color(103, 146, 137));
-        submit.setForeground(new java.awt.Color(255, 250, 202));
-        submit.setText("Submit");
-        submit.setFocusable(false);
-        submit.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        submit.setRound(20);
-        submit.setShadowColor(new java.awt.Color(102, 102, 102));
-        submit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitActionPerformed(evt);
-            }
-        });
-        jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 520, 100, 40));
-
-        roundedPanel1.setBackground(new java.awt.Color(255, 250, 202));
-        roundedPanel1.setRoundBottomRight(20);
-        roundedPanel1.setRoundTopRight(20);
-        roundedPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Visitor Information");
-        roundedPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 210, -1));
-
-        jPanel1.add(roundedPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 230, 50));
 
         jLabel3.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 250, 202));
@@ -122,22 +96,10 @@ public class EditVisitorInformation extends javax.swing.JFrame {
         jLabel6.setText("Address");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 90, -1));
 
-        address.setBackground(new java.awt.Color(255, 250, 202));
-        address.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 12)); // NOI18N
-        address.setRound(20);
-        address.setShadowColor(new java.awt.Color(153, 153, 153));
-        jPanel1.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 250, 50));
-
         jLabel7.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 250, 202));
         jLabel7.setText("Contact No.");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 90, -1));
-
-        contactno.setBackground(new java.awt.Color(255, 250, 202));
-        contactno.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 12)); // NOI18N
-        contactno.setRound(20);
-        contactno.setShadowColor(new java.awt.Color(153, 153, 153));
-        jPanel1.add(contactno, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, 250, 50));
 
         jLabel9.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 250, 202));
@@ -161,20 +123,6 @@ public class EditVisitorInformation extends javax.swing.JFrame {
         });
         jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, 150, 40));
 
-        back.setBackground(new java.awt.Color(103, 146, 137));
-        back.setForeground(new java.awt.Color(255, 250, 202));
-        back.setText("Back");
-        back.setFocusable(false);
-        back.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        back.setRound(20);
-        back.setShadowColor(new java.awt.Color(102, 102, 102));
-        back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
-            }
-        });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 100, 40));
-
         jLabel8.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 250, 202));
         jLabel8.setText("Visiting Status");
@@ -192,23 +140,23 @@ public class EditVisitorInformation extends javax.swing.JFrame {
         });
         jPanel1.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 150, 40));
 
-        firstname.setBackground(new java.awt.Color(255, 250, 202));
-        firstname.setForeground(new java.awt.Color(0, 0, 0));
-        firstname.addActionListener(new java.awt.event.ActionListener() {
+        contactno.setBackground(new java.awt.Color(255, 250, 202));
+        contactno.setForeground(new java.awt.Color(0, 0, 0));
+        contactno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstnameActionPerformed(evt);
+                contactnoActionPerformed(evt);
             }
         });
-        jPanel1.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 240, 50));
+        jPanel1.add(contactno, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 240, 50));
 
-        middlename.setBackground(new java.awt.Color(255, 250, 202));
-        middlename.setForeground(new java.awt.Color(0, 0, 0));
-        middlename.addActionListener(new java.awt.event.ActionListener() {
+        address.setBackground(new java.awt.Color(255, 250, 202));
+        address.setForeground(new java.awt.Color(0, 0, 0));
+        address.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                middlenameActionPerformed(evt);
+                addressActionPerformed(evt);
             }
         });
-        jPanel1.add(middlename, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 240, 50));
+        jPanel1.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 240, 50));
 
         lastname.setBackground(new java.awt.Color(255, 250, 202));
         lastname.setForeground(new java.awt.Color(0, 0, 0));
@@ -233,11 +181,72 @@ public class EditVisitorInformation extends javax.swing.JFrame {
             + ".png")));
 jPanel1.add(logo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 430, 400));
 
-javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-getContentPane().setLayout(layout);
-layout.setHorizontalGroup(
-    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+firstname1.setBackground(new java.awt.Color(255, 250, 202));
+firstname1.setForeground(new java.awt.Color(0, 0, 0));
+firstname1.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        firstname1ActionPerformed(evt);
+    }
+    });
+    jPanel1.add(firstname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 240, 50));
+
+    middlename1.setBackground(new java.awt.Color(255, 250, 202));
+    middlename1.setForeground(new java.awt.Color(0, 0, 0));
+    middlename1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            middlename1ActionPerformed(evt);
+        }
+    });
+    jPanel1.add(middlename1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 240, 50));
+
+    jPanel2.setBackground(new java.awt.Color(255, 250, 202));
+
+    jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+    jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+    jLabel1.setText("Edit Information");
+
+    javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+    jPanel2.setLayout(jPanel2Layout);
+    jPanel2Layout.setHorizontalGroup(
+        jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGap(34, 34, 34)
+            .addComponent(jLabel1)
+            .addContainerGap(36, Short.MAX_VALUE))
+    );
+    jPanel2Layout.setVerticalGroup(
+        jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGap(24, 24, 24)
+            .addComponent(jLabel1)
+            .addContainerGap(24, Short.MAX_VALUE))
+    );
+
+    jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 240, 80));
+
+    back.setBackground(new java.awt.Color(103, 146, 137));
+    back.setText("back");
+    back.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            backActionPerformed(evt);
+        }
+    });
+    jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 497, -1, 40));
+
+    submit.setBackground(new java.awt.Color(103, 146, 137));
+    submit.setText("submit");
+    submit.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            submitActionPerformed(evt);
+        }
+    });
+    jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 490, -1, 40));
+
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+    getContentPane().setLayout(layout);
+    layout.setHorizontalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,55 +257,13 @@ layout.setHorizontalGroup(
     setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-          try{
-            String documentName = firstname.getText()+" "+middlename.getText()+" "+lastname.getText();
-            Map<String, Object> data = new HashMap();
-            data.put("first_name",firstname.getText());
-            data.put("middle_name",middlename.getText());
-            data.put("last_name",lastname.getText());
-            data.put("address",address.getText());
-            data.put("age",age.getText());
-            data.put("gender",gender.getSelectedItem());
-            data.put("contact_no",contactno.getText());
-            if(status.getSelectedItem().equals("True")){
-                data.put("is_valid", true);
-            }else{
-                data.put("is_valid", false);
-            }
-
-            DocumentReference docRef = db_connect.db.collection("visitor").document(documentName);
-            docRef.update(data);
-
-            firstname.setText("");
-            middlename.setText("");
-            address.setText("");
-            lastname.setText("");
-            age.setText("");
-            status.setSelectedIndex(-1);
-            contactno.setText("");
-            gender.setSelectedIndex(-1);
-            JOptionPane.showMessageDialog(frame,"Information Updated successfully!",
-                                           "Success",
-                                           JOptionPane.INFORMATION_MESSAGE);
-            show(false);
-            VisitingSchedule form = new VisitingSchedule();
-            form.show();
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(frame,"Error occured when adding information",
-                                       "Error",
-                                       JOptionPane.INFORMATION_MESSAGE);
-        }
-    }//GEN-LAST:event_submitActionPerformed
-
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowClosing
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        firstname.setText(variables.first_name);
-        middlename.setText(variables.middle_name);
+        contactno.setText(variables.first_name);
+        address.setText(variables.middle_name);
         lastname.setText(variables.last_name);
         address.setText(variables.address);
         age.setText(variables.age);
@@ -320,13 +287,13 @@ layout.setHorizontalGroup(
         // TODO add your handling code here:
     }//GEN-LAST:event_genderActionPerformed
 
-    private void firstnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstnameActionPerformed
+    private void contactnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactnoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_firstnameActionPerformed
+    }//GEN-LAST:event_contactnoActionPerformed
 
-    private void middlenameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_middlenameActionPerformed
+    private void addressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_middlenameActionPerformed
+    }//GEN-LAST:event_addressActionPerformed
 
     private void lastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastnameActionPerformed
         // TODO add your handling code here:
@@ -335,6 +302,56 @@ layout.setHorizontalGroup(
     private void ageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ageActionPerformed
+
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         try{
+            String documentName = contactno.getText()+" "+address.getText()+" "+lastname.getText();
+            Map<String, Object> data = new HashMap();
+            data.put("first_name",contactno.getText());
+            data.put("middle_name",address.getText());
+            data.put("last_name",lastname.getText());
+            data.put("address",address.getText());
+            data.put("age",age.getText());
+            data.put("gender",gender.getSelectedItem());
+            data.put("contact_no",contactno.getText());
+            if(status.getSelectedItem().equals("True")){
+                data.put("is_valid", true);
+            }else{
+                data.put("is_valid", false);
+            }
+
+            DocumentReference docRef = db_connect.db.collection("visitor").document(documentName);
+            docRef.update(data);
+
+            contactno.setText("");
+            address.setText("");
+            address.setText("");
+            lastname.setText("");
+            age.setText("");
+            status.setSelectedIndex(-1);
+            contactno.setText("");
+            gender.setSelectedIndex(-1);
+            JOptionPane.showMessageDialog(frame,"Information Updated successfully!",
+                                           "Success",
+                                           JOptionPane.INFORMATION_MESSAGE);
+            show(false);
+            VisitingSchedule form = new VisitingSchedule();
+            form.show();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(frame,"Error occured when adding information",
+                                       "Error",
+                                       JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void firstname1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstname1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_firstname1ActionPerformed
+
+    private void middlename1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_middlename1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_middlename1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -387,11 +404,11 @@ layout.setHorizontalGroup(
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private textfield.TextField address;
+    private javax.swing.JTextField address;
     private javax.swing.JTextField age;
-    private CustomComponents.button.Button back;
-    private textfield.TextField contactno;
-    private javax.swing.JTextField firstname;
+    private javax.swing.JButton back;
+    private javax.swing.JTextField contactno;
+    private javax.swing.JTextField firstname1;
     private javax.swing.JComboBox<String> gender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -403,11 +420,11 @@ layout.setHorizontalGroup(
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField lastname;
     private javax.swing.JLabel logo1;
-    private javax.swing.JTextField middlename;
-    private CustomComponents.RoundedPanel roundedPanel1;
+    private javax.swing.JTextField middlename1;
     private javax.swing.JComboBox<String> status;
-    private CustomComponents.button.Button submit;
+    private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }
