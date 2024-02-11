@@ -53,8 +53,8 @@ public class EditVisitorInformation extends javax.swing.JFrame {
         lastname = new javax.swing.JTextField();
         age = new javax.swing.JTextField();
         logo1 = new javax.swing.JLabel();
-        firstname1 = new javax.swing.JTextField();
-        middlename1 = new javax.swing.JTextField();
+        firstname = new javax.swing.JTextField();
+        middlename = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
@@ -181,23 +181,23 @@ public class EditVisitorInformation extends javax.swing.JFrame {
             + ".png")));
 jPanel1.add(logo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 430, 400));
 
-firstname1.setBackground(new java.awt.Color(255, 250, 202));
-firstname1.setForeground(new java.awt.Color(0, 0, 0));
-firstname1.addActionListener(new java.awt.event.ActionListener() {
+firstname.setBackground(new java.awt.Color(255, 250, 202));
+firstname.setForeground(new java.awt.Color(0, 0, 0));
+firstname.addActionListener(new java.awt.event.ActionListener() {
     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        firstname1ActionPerformed(evt);
+        firstnameActionPerformed(evt);
     }
     });
-    jPanel1.add(firstname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 240, 50));
+    jPanel1.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 240, 50));
 
-    middlename1.setBackground(new java.awt.Color(255, 250, 202));
-    middlename1.setForeground(new java.awt.Color(0, 0, 0));
-    middlename1.addActionListener(new java.awt.event.ActionListener() {
+    middlename.setBackground(new java.awt.Color(255, 250, 202));
+    middlename.setForeground(new java.awt.Color(0, 0, 0));
+    middlename.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            middlename1ActionPerformed(evt);
+            middlenameActionPerformed(evt);
         }
     });
-    jPanel1.add(middlename1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 240, 50));
+    jPanel1.add(middlename, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 240, 50));
 
     jPanel2.setBackground(new java.awt.Color(255, 250, 202));
 
@@ -262,8 +262,8 @@ firstname1.addActionListener(new java.awt.event.ActionListener() {
     }//GEN-LAST:event_formWindowClosing
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        contactno.setText(variables.first_name);
-        address.setText(variables.middle_name);
+        firstname.setText(variables.first_name);
+        middlename.setText(variables.middle_name);
         lastname.setText(variables.last_name);
         address.setText(variables.address);
         age.setText(variables.age);
@@ -345,13 +345,13 @@ firstname1.addActionListener(new java.awt.event.ActionListener() {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void firstname1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstname1ActionPerformed
+    private void firstnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_firstname1ActionPerformed
+    }//GEN-LAST:event_firstnameActionPerformed
 
-    private void middlename1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_middlename1ActionPerformed
+    private void middlenameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_middlenameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_middlename1ActionPerformed
+    }//GEN-LAST:event_middlenameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -408,7 +408,7 @@ firstname1.addActionListener(new java.awt.event.ActionListener() {
     private javax.swing.JTextField age;
     private javax.swing.JButton back;
     private javax.swing.JTextField contactno;
-    private javax.swing.JTextField firstname1;
+    private javax.swing.JTextField firstname;
     private javax.swing.JComboBox<String> gender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -423,7 +423,7 @@ firstname1.addActionListener(new java.awt.event.ActionListener() {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField lastname;
     private javax.swing.JLabel logo1;
-    private javax.swing.JTextField middlename1;
+    private javax.swing.JTextField middlename;
     private javax.swing.JComboBox<String> status;
     private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
