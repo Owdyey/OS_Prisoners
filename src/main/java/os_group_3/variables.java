@@ -22,7 +22,9 @@ public class variables {
     public static String contact_number;
     public static String address;
     public static String status;
-    
+    public static String image;
+    public static String violation;
+            
     
     public static String pdl_firstname;
     public static String pdl_middlename;

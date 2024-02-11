@@ -115,23 +115,23 @@ public class CheckVisitor extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Visitor Information");
+        jLabel1.setText("Check Visitor");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
+                .addContainerGap(80, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(42, 42, 42))
+                .addGap(71, 71, 71))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 290, 70));
@@ -217,11 +217,13 @@ back.addActionListener(new java.awt.event.ActionListener() {
                variables.middle_name = data.get("middle_name").toString();
                variables.last_name = data.get("last_name").toString();
                variables.age = data.get("age").toString();
+               variables.address = data.get("address").toString();
                variables.gender = data.get("gender").toString();
                variables.contact_number = data.get("contact_no").toString();
+               variables.image = data.get("image").toString();
                 
                 }else{
-                     JOptionPane.showMessageDialog(frame, "The visitor is currently not eligible for any visits.",
+                     JOptionPane.showMessageDialog(frame, "The visitor is currently not eligible for any visits.\n" + "Rules Violated by the Visitor:\n"+"•"+data.get("violation").toString(),
                         "Success",
                         JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -244,6 +246,7 @@ back.addActionListener(new java.awt.event.ActionListener() {
                     variables.gender = "";
                     variables.contact_number = "";
                     variables.address = "";
+                    variables.image = "";
                 } else {
                     return;
                 }

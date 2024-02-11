@@ -6,16 +6,19 @@ package os_group_3;
 
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
+import java.awt.Image;
 import java.awt.List;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -67,9 +70,10 @@ public class AddVisitor extends javax.swing.JFrame {
         firstname = new javax.swing.JTextField();
         contactno = new javax.swing.JTextField();
         pdlfirstname = new javax.swing.JTextField();
-        logo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        imageLabel = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OS_Group3");
@@ -90,42 +94,42 @@ public class AddVisitor extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 250, 202));
         jLabel3.setText("First Name");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 90, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 90, -1));
 
         jLabel4.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 250, 202));
         jLabel4.setText("Middle Name");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 90, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 90, -1));
 
         jLabel5.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 250, 202));
         jLabel5.setText("Last Name");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 90, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 90, -1));
 
         jLabel6.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 250, 202));
         jLabel6.setText("Address");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 90, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 90, -1));
 
         jLabel7.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 250, 202));
         jLabel7.setText("Contact No.");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 90, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 90, -1));
 
         jLabel8.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 250, 202));
         jLabel8.setText("Inmate First Name");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 130, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 130, -1));
 
         jLabel9.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 250, 202));
         jLabel9.setText("Gender");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 60, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 60, -1));
 
         jLabel10.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 250, 202));
         jLabel10.setText("Relationship");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, 130, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 130, -1));
 
         relationship.setBackground(new java.awt.Color(255, 250, 202));
         relationship.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 12)); // NOI18N
@@ -136,17 +140,17 @@ public class AddVisitor extends javax.swing.JFrame {
                 relationshipActionPerformed(evt);
             }
         });
-        jPanel1.add(relationship, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, 180, 40));
+        jPanel1.add(relationship, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 360, 180, 40));
 
         jLabel11.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 250, 202));
         jLabel11.setText("Age");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 40, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 40, -1));
 
         jLabel12.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 250, 202));
         jLabel12.setText("Inmate Last Name");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 130, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 130, -1));
 
         gender.setBackground(new java.awt.Color(255, 250, 202));
         gender.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 12)); // NOI18N
@@ -158,7 +162,7 @@ public class AddVisitor extends javax.swing.JFrame {
                 genderActionPerformed(evt);
             }
         });
-        jPanel1.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 150, 40));
+        jPanel1.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 430, 150, 40));
 
         jButton1.setBackground(new java.awt.Color(103, 146, 137));
         jButton1.setText("submit");
@@ -194,7 +198,7 @@ public class AddVisitor extends javax.swing.JFrame {
                 ageActionPerformed(evt);
             }
         });
-        jPanel1.add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, 60, 40));
+        jPanel1.add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, 60, 40));
 
         pdllastname.setBackground(new java.awt.Color(255, 250, 202));
         pdllastname.setForeground(new java.awt.Color(0, 0, 0));
@@ -203,7 +207,7 @@ public class AddVisitor extends javax.swing.JFrame {
                 pdllastnameActionPerformed(evt);
             }
         });
-        jPanel1.add(pdllastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, 240, 50));
+        jPanel1.add(pdllastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 240, 50));
 
         middlename.setBackground(new java.awt.Color(255, 250, 202));
         middlename.setForeground(new java.awt.Color(0, 0, 0));
@@ -212,7 +216,7 @@ public class AddVisitor extends javax.swing.JFrame {
                 middlenameActionPerformed(evt);
             }
         });
-        jPanel1.add(middlename, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 240, 50));
+        jPanel1.add(middlename, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 240, 50));
 
         lastname.setBackground(new java.awt.Color(255, 250, 202));
         lastname.setForeground(new java.awt.Color(0, 0, 0));
@@ -221,7 +225,7 @@ public class AddVisitor extends javax.swing.JFrame {
                 lastnameActionPerformed(evt);
             }
         });
-        jPanel1.add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 240, 50));
+        jPanel1.add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, 240, 50));
 
         address.setBackground(new java.awt.Color(255, 250, 202));
         address.setForeground(new java.awt.Color(0, 0, 0));
@@ -230,7 +234,7 @@ public class AddVisitor extends javax.swing.JFrame {
                 addressActionPerformed(evt);
             }
         });
-        jPanel1.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 240, 50));
+        jPanel1.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 240, 50));
 
         firstname.setBackground(new java.awt.Color(255, 250, 202));
         firstname.setForeground(new java.awt.Color(0, 0, 0));
@@ -239,7 +243,7 @@ public class AddVisitor extends javax.swing.JFrame {
                 firstnameActionPerformed(evt);
             }
         });
-        jPanel1.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 240, 50));
+        jPanel1.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 240, 50));
 
         contactno.setBackground(new java.awt.Color(255, 250, 202));
         contactno.setForeground(new java.awt.Color(0, 0, 0));
@@ -248,7 +252,7 @@ public class AddVisitor extends javax.swing.JFrame {
                 contactnoActionPerformed(evt);
             }
         });
-        jPanel1.add(contactno, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 240, 50));
+        jPanel1.add(contactno, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 240, 50));
 
         pdlfirstname.setBackground(new java.awt.Color(255, 250, 202));
         pdlfirstname.setForeground(new java.awt.Color(0, 0, 0));
@@ -257,44 +261,57 @@ public class AddVisitor extends javax.swing.JFrame {
                 pdlfirstnameActionPerformed(evt);
             }
         });
-        jPanel1.add(pdlfirstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 240, 50));
+        jPanel1.add(pdlfirstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 240, 50));
+
+        jPanel2.setBackground(new java.awt.Color(255, 250, 202));
+        jPanel2.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Add Visitor");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(jLabel1)
+                .addContainerGap(73, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 250, 70));
+
+        imageLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        imageLabel.setForeground(new java.awt.Color(255, 255, 255));
+        imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imageLabel.setText("Click here to upload an image..");
+        imageLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        imageLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        imageLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabelMouseClicked(evt);
+            }
+        });
+        jPanel1.add(imageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 240, 330));
 
         logo.setBackground(new java.awt.Color(255, 250, 202));
         logo.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
             + ".png")));
 jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 430, 400));
 
-jPanel2.setBackground(new java.awt.Color(255, 250, 202));
-jPanel2.setForeground(new java.awt.Color(0, 0, 0));
-
-jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-jLabel1.setText("Add Visitor");
-
-javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-jPanel2.setLayout(jPanel2Layout);
-jPanel2Layout.setHorizontalGroup(
-    jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-    .addGroup(jPanel2Layout.createSequentialGroup()
-        .addGap(59, 59, 59)
-        .addComponent(jLabel1)
-        .addContainerGap(73, Short.MAX_VALUE))
-    );
-    jPanel2Layout.setVerticalGroup(
-        jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGap(22, 22, 22)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(21, Short.MAX_VALUE))
-    );
-
-    jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 250, 70));
-
-    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-    getContentPane().setLayout(layout);
-    layout.setHorizontalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+getContentPane().setLayout(layout);
+layout.setHorizontalGroup(
+    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,6 +334,16 @@ jPanel2Layout.setHorizontalGroup(
         age.setText(variables.age);
         contactno.setText(variables.contact_number);
         gender.setSelectedItem(variables.gender);
+        
+         // Decode Base64 string to bytes
+        byte[] imageBytes = Base64.getDecoder().decode(variables.image);
+        
+        ImageIcon originalImageIcon = new ImageIcon(imageBytes);
+        Image originalImage = originalImageIcon.getImage();
+        Image scaledImage = originalImage.getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
+        imageLabel.setIcon(scaledImageIcon);
+        imageLabel.setText("");
     }//GEN-LAST:event_formWindowOpened
 
     private void relationshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relationshipActionPerformed
@@ -326,7 +353,7 @@ jPanel2Layout.setHorizontalGroup(
     private void genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_genderActionPerformed
-
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         LocalDate currentdate = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -350,12 +377,14 @@ jPanel2Layout.setHorizontalGroup(
                     data.put("age", age.getText());
                     data.put("gender", gender.getSelectedItem());
                     data.put("contact_no", contactno.getText());
+                    data.put("is_valid", true);
                     data.put("pdl_firstname", pdlfirstname.getText());
                     data.put("pdl_lastname", pdllastname.getText());
                     data.put("relationship", relationship.getSelectedItem());
                     data.put("date_of_visit", formattedDate);
                     data.put("time_of_visit", formattedTime);
                     data.put("time_out", timeOut);
+                    data.put("image", variables.image);
                  
 
                     DocumentReference docRef = db_connect.db.collection("visitor").document(documentName);
@@ -371,6 +400,8 @@ jPanel2Layout.setHorizontalGroup(
                     pdlfirstname.setText("");
                     pdllastname.setText("");
                     relationship.setSelectedIndex(0);
+                    imageLabel.setIcon(null);
+                    imageLabel.setText("Click here to upload an image..");
 
                     JOptionPane.showMessageDialog(frame, "Information added successfully!",
                             "Success",
@@ -446,6 +477,39 @@ show(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_pdlfirstnameActionPerformed
 
+    private void imageLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMouseClicked
+        // Create a file chooser dialog
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Choose Image");
+        fileChooser.setFileFilter(new FileNameExtensionFilter("Images", "jpg", "jpeg", "png", "gif"));
+
+        // Show the file chooser dialog
+        int returnValue = fileChooser.showOpenDialog(null);
+
+        // If the user chooses a file, display it in the JLabel
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            try {
+                // Read the selected image file as bytes
+                byte[] imageBytes = Files.readAllBytes(selectedFile.toPath());
+
+                // Convert the image bytes to a Base64 encoded string
+                variables.image = Base64.getEncoder().encodeToString(imageBytes);
+                
+                // Decode the Base64 string and set the image in the JLabel
+                ImageIcon originalImageIcon = new ImageIcon(imageBytes);
+                Image originalImage = originalImageIcon.getImage();
+                Image scaledImage = originalImage.getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(), Image.SCALE_SMOOTH);
+                ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
+                imageLabel.setIcon(scaledImageIcon);
+                imageLabel.setText("");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Error reading image file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_imageLabelMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -494,6 +558,7 @@ show(false);
     private javax.swing.JTextField contactno;
     private javax.swing.JTextField firstname;
     private javax.swing.JComboBox<String> gender;
+    private javax.swing.JLabel imageLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

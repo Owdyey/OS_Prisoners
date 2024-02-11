@@ -6,12 +6,17 @@ package os_group_3;
 
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
+import java.awt.Image;
 import java.awt.List;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static os_group_3.db_connect.frame;
 
@@ -52,14 +57,16 @@ public class EditVisitorInformation extends javax.swing.JFrame {
         address = new javax.swing.JTextField();
         lastname = new javax.swing.JTextField();
         age = new javax.swing.JTextField();
-        logo1 = new javax.swing.JLabel();
         firstname = new javax.swing.JTextField();
         middlename = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
         submit = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        imageLabel = new javax.swing.JLabel();
+        violation = new javax.swing.JTextField();
+        logo1 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OS_Group3");
@@ -126,8 +133,8 @@ public class EditVisitorInformation extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 250, 202));
-        jLabel8.setText("Visiting Status");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 100, -1));
+        jLabel8.setText("Violation");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 100, 20));
 
         gender.setBackground(new java.awt.Color(255, 250, 202));
         gender.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 12)); // NOI18N
@@ -177,80 +184,89 @@ public class EditVisitorInformation extends javax.swing.JFrame {
         });
         jPanel1.add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 60, 40));
 
+        firstname.setBackground(new java.awt.Color(255, 250, 202));
+        firstname.setForeground(new java.awt.Color(0, 0, 0));
+        firstname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstnameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 240, 50));
+
+        middlename.setBackground(new java.awt.Color(255, 250, 202));
+        middlename.setForeground(new java.awt.Color(0, 0, 0));
+        middlename.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                middlenameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(middlename, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 240, 50));
+
+        jPanel2.setBackground(new java.awt.Color(255, 250, 202));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Edit Information");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel1)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 240, 80));
+
+        back.setBackground(new java.awt.Color(103, 146, 137));
+        back.setText("back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, 40));
+
+        submit.setBackground(new java.awt.Color(103, 146, 137));
+        submit.setText("submit");
+        submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, -1, 40));
+
+        imageLabel.setText("jLabel2");
+        jPanel1.add(imageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 190, 250));
+
+        violation.setBackground(new java.awt.Color(255, 250, 202));
+        violation.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(violation, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 240, 50));
+
         logo1.setBackground(new java.awt.Color(255, 250, 202));
         logo1.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
             + ".png")));
 jPanel1.add(logo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 430, 400));
 
-firstname.setBackground(new java.awt.Color(255, 250, 202));
-firstname.setForeground(new java.awt.Color(0, 0, 0));
-firstname.addActionListener(new java.awt.event.ActionListener() {
-    public void actionPerformed(java.awt.event.ActionEvent evt) {
-        firstnameActionPerformed(evt);
-    }
-    });
-    jPanel1.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 240, 50));
+jLabel10.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
+jLabel10.setForeground(new java.awt.Color(255, 250, 202));
+jLabel10.setText("Visiting Status");
+jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 100, -1));
 
-    middlename.setBackground(new java.awt.Color(255, 250, 202));
-    middlename.setForeground(new java.awt.Color(0, 0, 0));
-    middlename.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            middlenameActionPerformed(evt);
-        }
-    });
-    jPanel1.add(middlename, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 240, 50));
-
-    jPanel2.setBackground(new java.awt.Color(255, 250, 202));
-
-    jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-    jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-    jLabel1.setText("Edit Information");
-
-    javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-    jPanel2.setLayout(jPanel2Layout);
-    jPanel2Layout.setHorizontalGroup(
-        jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGap(34, 34, 34)
-            .addComponent(jLabel1)
-            .addContainerGap(36, Short.MAX_VALUE))
-    );
-    jPanel2Layout.setVerticalGroup(
-        jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGap(24, 24, 24)
-            .addComponent(jLabel1)
-            .addContainerGap(24, Short.MAX_VALUE))
-    );
-
-    jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 240, 80));
-
-    back.setBackground(new java.awt.Color(103, 146, 137));
-    back.setText("back");
-    back.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            backActionPerformed(evt);
-        }
-    });
-    jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, 40));
-
-    submit.setBackground(new java.awt.Color(103, 146, 137));
-    submit.setText("submit");
-    submit.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            submitActionPerformed(evt);
-        }
-    });
-    jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, -1, 40));
-
-    jLabel2.setText("jLabel2");
-    jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 190, 250));
-
-    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-    getContentPane().setLayout(layout);
-    layout.setHorizontalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+getContentPane().setLayout(layout);
+layout.setHorizontalGroup(
+    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,6 +291,19 @@ firstname.addActionListener(new java.awt.event.ActionListener() {
         gender.setSelectedItem(variables.gender);
         address.setText(variables.address);
         status.setSelectedItem(variables.status);
+        violation.setText(variables.violation);
+        
+ 
+        // Decode Base64 string to bytes
+        byte[] imageBytes = Base64.getDecoder().decode(variables.image);
+        
+        ImageIcon originalImageIcon = new ImageIcon(imageBytes);
+        Image originalImage = originalImageIcon.getImage();
+        Image scaledImage = originalImage.getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledImageIcon = new ImageIcon(scaledImage);
+        imageLabel.setIcon(scaledImageIcon);
+        imageLabel.setText("");
+            
     }//GEN-LAST:event_formWindowOpened
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -318,6 +347,7 @@ firstname.addActionListener(new java.awt.event.ActionListener() {
             data.put("age",age.getText());
             data.put("gender",gender.getSelectedItem());
             data.put("contact_no",contactno.getText());
+            data.put("violation", violation.getText());
             if(status.getSelectedItem().equals("True")){
                 data.put("is_valid", true);
             }else{
@@ -335,6 +365,7 @@ firstname.addActionListener(new java.awt.event.ActionListener() {
             status.setSelectedIndex(-1);
             contactno.setText("");
             gender.setSelectedIndex(-1);
+            violation.setText("");
             JOptionPane.showMessageDialog(frame,"Information Updated successfully!",
                                            "Success",
                                            JOptionPane.INFORMATION_MESSAGE);
@@ -414,9 +445,10 @@ firstname.addActionListener(new java.awt.event.ActionListener() {
     private javax.swing.JTextField contactno;
     private javax.swing.JTextField firstname;
     private javax.swing.JComboBox<String> gender;
+    private javax.swing.JLabel imageLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -431,5 +463,6 @@ firstname.addActionListener(new java.awt.event.ActionListener() {
     private javax.swing.JTextField middlename;
     private javax.swing.JComboBox<String> status;
     private javax.swing.JButton submit;
+    private javax.swing.JTextField violation;
     // End of variables declaration//GEN-END:variables
 }

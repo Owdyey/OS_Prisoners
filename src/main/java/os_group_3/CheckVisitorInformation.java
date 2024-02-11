@@ -218,7 +218,9 @@ back.addActionListener(new java.awt.event.ActionListener() {
                variables.address = data.get("address").toString();
                variables.gender = data.get("gender").toString();
                variables.contact_number = data.get("contact_no").toString();
-               if(data.get("is_valid").toString().equals("True")){
+               variables.image = data.get("image").toString();
+               variables.violation = data.get("violation").toString();
+               if(data.get("is_valid").toString().equals("true")){
                    variables.status = "True";
                }else{
                     variables.status = "False";
@@ -241,6 +243,7 @@ back.addActionListener(new java.awt.event.ActionListener() {
                     variables.gender = "";
                     variables.contact_number = "";
                     variables.address = "";
+                    variables.image = "";
                 } else {
                     return;
                 }
