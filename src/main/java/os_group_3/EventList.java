@@ -76,7 +76,7 @@ public class EventList extends javax.swing.JFrame {
                 loginButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, 30));
+        jPanel1.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 100, 40));
 
         jPanel2.setBackground(new java.awt.Color(255, 250, 202));
         jPanel2.setForeground(new java.awt.Color(0, 0, 0));

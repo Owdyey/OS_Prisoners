@@ -154,19 +154,19 @@ layout.setHorizontalGroup(
 
     private void loginButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButton1ActionPerformed
         show(false);
-        CheckPrisoner form = new CheckPrisoner();
-        form.show();
+        VisitingSchedule form = new VisitingSchedule();
+        form.show();  
     }//GEN-LAST:event_loginButton1ActionPerformed
 
     private void loginButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButton2ActionPerformed
         show(false);
-        VisitingSchedule form = new VisitingSchedule();
+        EventList form = new EventList();
         form.show();
     }//GEN-LAST:event_loginButton2ActionPerformed
 
     private void loginButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButton3ActionPerformed
         show(false);
-        EventList form = new EventList();
+        CheckPrisoner form = new CheckPrisoner();
         form.show();
     }//GEN-LAST:event_loginButton3ActionPerformed
 

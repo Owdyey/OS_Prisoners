@@ -37,8 +37,8 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        username = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        username = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         logo = new javax.swing.JLabel();
 
@@ -67,10 +67,6 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel3.setText("Username");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 70, -1));
 
-        username.setBackground(new java.awt.Color(255, 250, 202));
-        username.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 230, 50));
-
         jButton1.setBackground(new java.awt.Color(103, 146, 137));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Login");
@@ -80,6 +76,15 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 90, 40));
+
+        username.setBackground(new java.awt.Color(255, 250, 202));
+        username.setForeground(new java.awt.Color(0, 0, 0));
+        username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 230, 50));
 
         password.setBackground(new java.awt.Color(255, 250, 202));
         password.setForeground(new java.awt.Color(0, 0, 0));
@@ -145,6 +150,10 @@ layout.setHorizontalGroup(
                 JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameActionPerformed
 
     /**
      * @param args the command line arguments

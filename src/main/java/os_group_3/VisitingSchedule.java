@@ -87,7 +87,12 @@ public class VisitingSchedule extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 250, 202));
         jButton1.setText("Back");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 90, 40));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 90, 40));
 
         loginButton2.setBackground(new java.awt.Color(103, 146, 137));
         loginButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -212,6 +217,12 @@ layout.setHorizontalGroup(
         CheckVisitorInformation form = new CheckVisitorInformation();
         form.show();
     }//GEN-LAST:event_loginButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        show(false);
+        Homepage form = new Homepage();
+        form.show(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

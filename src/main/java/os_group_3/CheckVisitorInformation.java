@@ -159,7 +159,7 @@ back.addActionListener(new java.awt.event.ActionListener() {
         backActionPerformed(evt);
     }
     });
-    jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 527, -1, 40));
+    jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 90, 40));
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
