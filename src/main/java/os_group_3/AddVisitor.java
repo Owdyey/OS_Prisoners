@@ -7,12 +7,18 @@ package os_group_3;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import java.awt.List;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import static os_group_3.db_connect.frame;
 
 /**
@@ -322,61 +328,99 @@ jPanel2Layout.setHorizontalGroup(
     }//GEN-LAST:event_genderActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-LocalDate currentdate = LocalDate.now();
+        LocalDate currentdate = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String formattedDate = currentdate.format(formatter);
-        
+
         LocalTime currentTime = LocalTime.now();
-        DateTimeFormatter timeformatter = null;
-        timeformatter = DateTimeFormatter.ofPattern("hh:mm a");
+        DateTimeFormatter timeformatter = DateTimeFormatter.ofPattern("hh:mm a");
         String formattedTime = currentTime.format(timeformatter);
-        
+
         LocalTime newTime = currentTime.plusMinutes(15);
         String timeOut = newTime.format(timeformatter);
-          
-        try{
-        String documentName = firstname.getText()+" "+middlename.getText()+" "+lastname.getText();
-        Map<String, Object> data = new HashMap();
-        data.put("first_name",firstname.getText());
-        data.put("middle_name",middlename.getText());
-        data.put("last_name",lastname.getText());
-        data.put("address",address.getText());
-        data.put("age",age.getText());
-        data.put("gender",gender.getSelectedItem());
-        data.put("contact_no",contactno.getText());
-        data.put("pdl_firstname",pdlfirstname.getText());
-        data.put("pdl_lastname",pdllastname.getText());
-        data.put("relationship",relationship.getSelectedItem());
-        data.put("date_of_visit", formattedDate);
-        data.put("time_of_visit", formattedTime);
-        data.put("time_out", timeOut);
 
-        DocumentReference docRef = db_connect.db.collection("visitor").document(documentName);
-        docRef.set(data);
+        try {
+            // Create a JFileChooser for image upload
+            JFileChooser fileChooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "jpeg", "png", "gif");
+            fileChooser.setFileFilter(filter);
 
-        firstname.setText("");
-        middlename.setText("");
-        address.setText("");
-        lastname.setText("");
-        age.setText("");
-        gender.setSelectedIndex(0);
-        contactno.setText("");
-        pdlfirstname.setText("");
-        pdllastname.setText("");
-        relationship.setSelectedIndex(0);
+            int result = fileChooser.showOpenDialog(this);
 
-        JOptionPane.showMessageDialog(frame,"Information added successfully!",
-                                       "Success",
-                                       JOptionPane.INFORMATION_MESSAGE);
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(frame,"Error occured when adding information",
-                                       "Error",
-                                       JOptionPane.INFORMATION_MESSAGE);
+            if (result == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
+
+                // Validate that it's an image file
+                if (isValidImageFile(selectedFile)) {
+                    // Perform image upload logic
+                    String base64Image = convertImageToBase64(selectedFile);
+
+                    // Continue with the rest of the data upload
+                    String documentName = firstname.getText() + " " + middlename.getText() + " " + lastname.getText();
+                    Map<String, Object> data = new HashMap<>();
+                    data.put("first_name", firstname.getText());
+                    data.put("middle_name", middlename.getText());
+                    data.put("last_name", lastname.getText());
+                    data.put("address", address.getText());
+                    data.put("age", age.getText());
+                    data.put("gender", gender.getSelectedItem());
+                    data.put("contact_no", contactno.getText());
+                    data.put("pdl_firstname", pdlfirstname.getText());
+                    data.put("pdl_lastname", pdllastname.getText());
+                    data.put("relationship", relationship.getSelectedItem());
+                    data.put("date_of_visit", formattedDate);
+                    data.put("time_of_visit", formattedTime);
+                    data.put("time_out", timeOut);
+                    data.put("image", base64Image);
+
+                    DocumentReference docRef = db_connect.db.collection("visitor").document(documentName);
+                    docRef.set(data);
+
+                    firstname.setText("");
+                    middlename.setText("");
+                    address.setText("");
+                    lastname.setText("");
+                    age.setText("");
+                    gender.setSelectedIndex(0);
+                    contactno.setText("");
+                    pdlfirstname.setText("");
+                    pdllastname.setText("");
+                    relationship.setSelectedIndex(0);
+
+                    JOptionPane.showMessageDialog(frame, "Information added successfully!",
+                            "Success",
+                            JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Invalid image file. Please select a valid image file.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(frame, "Error occurred when adding information",
+                    "Error",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
 
         }//GEN-LAST:event_jButton1ActionPerformed
+    private String convertImageToBase64(File imageFile) throws IOException {
+        byte[] fileBytes = new byte[(int) imageFile.length()];
+        FileInputStream fileInputStream = new FileInputStream(imageFile);
+        fileInputStream.read(fileBytes);
+        fileInputStream.close();
+        return Base64.getEncoder().encodeToString(fileBytes);
+    }    
+    
+    private boolean isValidImageFile(File file) {
+                String[] allowedExtensions = {"jpg", "jpeg", "png", "gif"};
+                String fileName = file.getName().toLowerCase();
 
+                for (String extension : allowedExtensions) {
+                    if (fileName.endsWith("." + extension)) {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
          show(false);
         VisitorList form = new VisitorList();

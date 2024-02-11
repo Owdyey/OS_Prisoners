@@ -59,6 +59,7 @@ public class EditVisitorInformation extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
         submit = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OS_Group3");
@@ -79,37 +80,37 @@ public class EditVisitorInformation extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 250, 202));
         jLabel3.setText("First Name");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 90, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 90, -1));
 
         jLabel4.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 250, 202));
         jLabel4.setText("Middle Name");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 90, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 90, -1));
 
         jLabel5.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 250, 202));
         jLabel5.setText("Last Name");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 90, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 90, -1));
 
         jLabel6.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 250, 202));
         jLabel6.setText("Address");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 90, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 90, -1));
 
         jLabel7.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 250, 202));
         jLabel7.setText("Contact No.");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 90, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 160, 90, -1));
 
         jLabel9.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 250, 202));
         jLabel9.setText("Gender");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 60, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 60, -1));
 
         jLabel11.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 250, 202));
         jLabel11.setText("Age");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 40, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 40, -1));
 
         status.setBackground(new java.awt.Color(255, 250, 202));
         status.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 12)); // NOI18N
@@ -121,12 +122,12 @@ public class EditVisitorInformation extends javax.swing.JFrame {
                 statusActionPerformed(evt);
             }
         });
-        jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, 150, 40));
+        jPanel1.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 150, 40));
 
         jLabel8.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 250, 202));
         jLabel8.setText("Visiting Status");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 100, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 100, -1));
 
         gender.setBackground(new java.awt.Color(255, 250, 202));
         gender.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 12)); // NOI18N
@@ -138,7 +139,7 @@ public class EditVisitorInformation extends javax.swing.JFrame {
                 genderActionPerformed(evt);
             }
         });
-        jPanel1.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 150, 40));
+        jPanel1.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 150, 40));
 
         contactno.setBackground(new java.awt.Color(255, 250, 202));
         contactno.setForeground(new java.awt.Color(0, 0, 0));
@@ -147,7 +148,7 @@ public class EditVisitorInformation extends javax.swing.JFrame {
                 contactnoActionPerformed(evt);
             }
         });
-        jPanel1.add(contactno, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 240, 50));
+        jPanel1.add(contactno, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 240, 50));
 
         address.setBackground(new java.awt.Color(255, 250, 202));
         address.setForeground(new java.awt.Color(0, 0, 0));
@@ -156,7 +157,7 @@ public class EditVisitorInformation extends javax.swing.JFrame {
                 addressActionPerformed(evt);
             }
         });
-        jPanel1.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 240, 50));
+        jPanel1.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 250, 240, 50));
 
         lastname.setBackground(new java.awt.Color(255, 250, 202));
         lastname.setForeground(new java.awt.Color(0, 0, 0));
@@ -165,7 +166,7 @@ public class EditVisitorInformation extends javax.swing.JFrame {
                 lastnameActionPerformed(evt);
             }
         });
-        jPanel1.add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 240, 50));
+        jPanel1.add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 240, 50));
 
         age.setBackground(new java.awt.Color(255, 250, 202));
         age.setForeground(new java.awt.Color(0, 0, 0));
@@ -174,7 +175,7 @@ public class EditVisitorInformation extends javax.swing.JFrame {
                 ageActionPerformed(evt);
             }
         });
-        jPanel1.add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, 60, 40));
+        jPanel1.add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 60, 40));
 
         logo1.setBackground(new java.awt.Color(255, 250, 202));
         logo1.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
@@ -188,7 +189,7 @@ firstname.addActionListener(new java.awt.event.ActionListener() {
         firstnameActionPerformed(evt);
     }
     });
-    jPanel1.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 240, 50));
+    jPanel1.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 240, 50));
 
     middlename.setBackground(new java.awt.Color(255, 250, 202));
     middlename.setForeground(new java.awt.Color(0, 0, 0));
@@ -197,7 +198,7 @@ firstname.addActionListener(new java.awt.event.ActionListener() {
             middlenameActionPerformed(evt);
         }
     });
-    jPanel1.add(middlename, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 240, 50));
+    jPanel1.add(middlename, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 240, 50));
 
     jPanel2.setBackground(new java.awt.Color(255, 250, 202));
 
@@ -231,7 +232,7 @@ firstname.addActionListener(new java.awt.event.ActionListener() {
             backActionPerformed(evt);
         }
     });
-    jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, 40));
+    jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, 40));
 
     submit.setBackground(new java.awt.Color(103, 146, 137));
     submit.setText("submit");
@@ -240,7 +241,10 @@ firstname.addActionListener(new java.awt.event.ActionListener() {
             submitActionPerformed(evt);
         }
     });
-    jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 480, -1, 40));
+    jPanel1.add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, -1, 40));
+
+    jLabel2.setText("jLabel2");
+    jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 190, 250));
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -412,6 +416,7 @@ firstname.addActionListener(new java.awt.event.ActionListener() {
     private javax.swing.JComboBox<String> gender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
