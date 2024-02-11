@@ -109,7 +109,7 @@ public class AddPrisoner extends javax.swing.JFrame {
                 eligibilityActionPerformed(evt);
             }
         });
-        jPanel1.add(eligibility, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, 240, 40));
+        jPanel1.add(eligibility, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 240, 40));
 
         jLabel11.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 250, 202));
@@ -227,7 +227,7 @@ jButton3.addActionListener(new java.awt.event.ActionListener() {
     }//GEN-LAST:event_formWindowClosing
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        age.setText(variables.pdl_firstname);
+        firstname.setText(variables.pdl_firstname);
         middlename.setText(variables.pdl_middlename);
         lastname.setText(variables.pdl_lastname);
         eligibility.setSelectedItem(variables.availability);
@@ -265,7 +265,7 @@ try{
         DocumentReference docRef = db_connect.db.collection("prisoners").document(documentName);
         docRef.set(data);
 
-        age.setText("");
+        firstname.setText("");
         middlename.setText("");
         lastname.setText("");
         age.setText("");

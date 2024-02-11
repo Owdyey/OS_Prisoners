@@ -168,7 +168,7 @@ public class VisitorList extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         show(false);
-       AddVisitor form = new AddVisitor();
+       VisitingSchedule form = new VisitingSchedule();
        form.show();
     }//GEN-LAST:event_jButton2ActionPerformed
 private void showData() {

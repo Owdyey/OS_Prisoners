@@ -37,9 +37,9 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        password = new javax.swing.JTextField();
         username = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        password = new javax.swing.JPasswordField();
         logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,10 +67,6 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel3.setText("Username");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 70, -1));
 
-        password.setBackground(new java.awt.Color(255, 250, 202));
-        password.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 230, 50));
-
         username.setBackground(new java.awt.Color(255, 250, 202));
         username.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 230, 50));
@@ -84,6 +80,10 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 90, 40));
+
+        password.setBackground(new java.awt.Color(255, 250, 202));
+        password.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 230, 50));
 
         logo.setIcon((new javax.swing.ImageIcon(System.getProperty("user.dir") + "\\src\\main\\java\\images\\bjmpLogo"
             + ".png")));
@@ -116,7 +116,7 @@ layout.setHorizontalGroup(
         try {
             String collectionName = "admin";
 
-            String usernameInput = password.getText();
+            String usernameInput = username.getText();
             String passwordInput = hashPass.encryptPassword(password.getText());
 
             var documents = db_connect.db.collection(collectionName)
@@ -187,7 +187,7 @@ layout.setHorizontalGroup(
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel logo;
-    private javax.swing.JTextField password;
+    private javax.swing.JPasswordField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
