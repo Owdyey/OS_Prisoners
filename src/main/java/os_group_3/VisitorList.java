@@ -47,14 +47,14 @@ public class VisitorList extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        backButton = new CustomComponents.button.Button();
         jScrollPane1 = new javax.swing.JScrollPane();
         dataTable = new javax.swing.JTable();
         showDate = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        roundedPanel1 = new CustomComponents.RoundedPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        addVisitor = new CustomComponents.button.Button();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("OS_Group3");
@@ -72,20 +72,6 @@ public class VisitorList extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 53, 84));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        backButton.setBackground(new java.awt.Color(103, 146, 137));
-        backButton.setForeground(new java.awt.Color(255, 250, 202));
-        backButton.setText("Back");
-        backButton.setFocusable(false);
-        backButton.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        backButton.setRound(20);
-        backButton.setShadowColor(new java.awt.Color(102, 102, 102));
-        backButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 100, 40));
 
         dataTable.setBackground(new java.awt.Color(255, 250, 202));
         dataTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -113,32 +99,50 @@ public class VisitorList extends javax.swing.JFrame {
         jLabel2.setText("Current Date:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 120, 20));
 
-        roundedPanel1.setBackground(new java.awt.Color(255, 250, 202));
-        roundedPanel1.setRoundBottomRight(20);
-        roundedPanel1.setRoundTopRight(20);
-        roundedPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(255, 250, 202));
 
-        jLabel1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Visitor List");
-        roundedPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 180, -1));
 
-        jPanel1.add(roundedPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 230, 50));
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+        );
 
-        addVisitor.setBackground(new java.awt.Color(103, 146, 137));
-        addVisitor.setForeground(new java.awt.Color(255, 250, 202));
-        addVisitor.setText("Add Visitor");
-        addVisitor.setFocusable(false);
-        addVisitor.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 14)); // NOI18N
-        addVisitor.setRound(20);
-        addVisitor.setShadowColor(new java.awt.Color(102, 102, 102));
-        addVisitor.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 230, 60));
+
+        jButton1.setBackground(new java.awt.Color(103, 146, 137));
+        jButton1.setText("Add Visitor");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addVisitorActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(addVisitor, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 510, 120, 50));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 510, 100, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, -1));
+        jButton2.setBackground(new java.awt.Color(103, 146, 137));
+        jButton2.setText("back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 90, 40));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 570));
 
         pack();
         setLocationRelativeTo(null);
@@ -147,12 +151,6 @@ public class VisitorList extends javax.swing.JFrame {
     
     
     
-    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        show(false);
-        VisitingSchedule form = new VisitingSchedule();
-        form.show();
-    }//GEN-LAST:event_backButtonActionPerformed
-
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowClosing
@@ -162,11 +160,17 @@ public class VisitorList extends javax.swing.JFrame {
         showData();
     }//GEN-LAST:event_formWindowOpened
 
-    private void addVisitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addVisitorActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         show(false);
        AddVisitor form = new AddVisitor();
        form.show();
-    }//GEN-LAST:event_addVisitorActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        show(false);
+       AddVisitor form = new AddVisitor();
+       form.show();
+    }//GEN-LAST:event_jButton2ActionPerformed
 private void showData() {
         // Get the Firestore instance
 
@@ -253,14 +257,14 @@ private void showData() {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private CustomComponents.button.Button addVisitor;
-    private CustomComponents.button.Button backButton;
     private javax.swing.JTable dataTable;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private CustomComponents.RoundedPanel roundedPanel1;
     private javax.swing.JLabel showDate;
     // End of variables declaration//GEN-END:variables
 }
